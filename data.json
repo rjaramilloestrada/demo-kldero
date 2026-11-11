@@ -1,0 +1,295 @@
+{
+  "negocio": "Kldero Steak Club",
+  "negocio_largo": "Kldero Steak Club | Parrilla uruguaya en Guayaquil",
+  "instagram": "kldero.ec",
+  "tiktok": "kldero.ec",
+  "whatsapp": "593997986596",
+  "demo": {
+    "banner": true,
+    "noindex": true,
+    "texto": "Demo de diseño preparado por IGNIS para Kldero Steak Club. No es el sitio oficial.",
+    "simulador": "Solo en el demo: ver cómo se ve"
+  },
+  "marca": {
+    "colores_estado": "aproximado",
+    "nota_colores": "Colores aproximados, por confirmar con el logo y las fotos reales del negocio.",
+    "colores": {
+      "carbon": "#0a0908",
+      "brasa_oscura": "#14110f",
+      "pizarra": "#1d1916",
+      "oro": "#c8a04a",
+      "oro_claro": "#f0d48a",
+      "brasa": "#e4572e",
+      "hueso": "#f3eadb",
+      "humo": "#a69d8d"
+    },
+    "ilustracion_nota": "Ilustración referencial"
+  },
+  "medicion": {
+    "meta_pixel_id": "",
+    "ga4_id": ""
+  },
+  "mensajes": {
+    "general": "Hola Kldero 👋 Quiero información.",
+    "hero": "Hola Kldero 👋 Quiero información de la carta y las promos.",
+    "cabecera": "Hola Kldero 👋 Quiero información.",
+    "flotante": "Hola Kldero 👋 Quiero información.",
+    "pie": "Hola Kldero 👋 Quiero información.",
+    "pedido_intro": "Hola Kldero 👋 Quiero hacer un pedido a domicilio:",
+    "reserva_intro": "Hola Kldero 👋 Quiero reservar:"
+  },
+  "hero": {
+    "titulo": ["Parrilla", "uruguaya"],
+    "script": "cortes que se escuchan en Guayaquil",
+    "texto": "Bife de chorizo y picaña uruguaya, tres cerditos y panceta crujiente, a la brasa. Tres locales, show en vivo y entrega a domicilio.",
+    "sello": ["Kldero Steak Club", "Guayaquil", "A la brasa"]
+  },
+  "atajos": [
+    { "etiqueta": "Menú", "detalle": "Cortes y precios", "destino": "menu" },
+    { "etiqueta": "Promos", "detalle": "Para dos, y sobra", "destino": "promos" },
+    { "etiqueta": "Locales", "detalle": "Tres en Guayaquil", "destino": "locales" },
+    { "etiqueta": "Reservar", "detalle": "Tu mesa lista", "destino": "reservar" }
+  ],
+  "marquee": [
+    "Bife uruguayo",
+    "Picaña uruguaya",
+    "Tres Cerditos",
+    "Panceta crujiente",
+    "Tres Res",
+    "Costillas BBQ Jack Daniel's",
+    "Show en vivo",
+    "Martes loco",
+    "Cócteles"
+  ],
+  "escena": {
+    "eyebrow": "Del fuego a tu mesa",
+    "titulo": "Crudo, sellado, servido",
+    "pasos": [
+      { "num": "01 / 03", "titulo": "Crudo", "texto": "Corte grueso, bien marmoleado, directo de la cámara. Todo empieza con la materia prima." },
+      { "num": "02 / 03", "titulo": "Sellado", "texto": "Las brasas lo marcan, la grasa chisporrotea y el humo hace el resto. Aquí se gana el sabor." },
+      { "num": "03 / 03", "titulo": "Servido", "texto": "Al plato con guarniciones y bandera uruguaya. Llega humeante, listo para compartir." }
+    ]
+  },
+  "promos_seccion": {
+    "eyebrow": "Promos vigentes",
+    "titulo": ["Para dos,", "y sobra"],
+    "lead": "Cada promo trae su condición a la vista. Toca “Pedir” y se arma tu pedido; lo mandas por WhatsApp.",
+    "nota": "Promos publicadas por Kldero en su Instagram. Todas incluyen guarniciones y aplican en los tres locales, salvo que se indique lo contrario."
+  },
+  "promos": [
+    { "id": "p-bife", "arte": "pr-bife", "que": "Uruguayo", "nombre": "2 Bifes de chorizo", "precio": 19.99, "condicion": "Con guarniciones", "solo_efectivo": false },
+    { "id": "p-pic", "arte": "pr-pic", "que": "Uruguaya", "nombre": "2 Picañas", "precio": 19.99, "condicion": "Con guarniciones", "solo_efectivo": false },
+    { "id": "p-cerd", "arte": "pr-cerd", "que": "Los tres", "nombre": "2 Tres Cerditos", "precio": 19.99, "condicion": "Con guarniciones", "solo_efectivo": false },
+    { "id": "p-tres", "arte": "pr-tres", "que": "Combo", "nombre": "2 Tres Res", "precio": 29.99, "condicion": "Con guarniciones", "solo_efectivo": false },
+    { "id": "p-panc", "arte": "pr-panc", "que": "Crujiente", "nombre": "2 Pancetas", "precio": 11.99, "condicion": "Solo efectivo", "solo_efectivo": true },
+    { "id": "p-poll", "arte": "pr-poll", "que": "Al grill", "nombre": "2 Pollos", "precio": 11.99, "condicion": "Todos los días", "solo_efectivo": false }
+  ],
+  "martes_loco": {
+    "dia": 2,
+    "etiqueta": "Solo martes",
+    "titulo": "Martes loco · 2x1",
+    "texto": "Tres Cerditos, Picaña de cerdo o Lomo fino de cerdo. Pagas uno, llevas dos.",
+    "texto_corto": "2x1 en Tres Cerditos, Picaña de cerdo y Lomo fino de cerdo.",
+    "boton_hoy": "Aprovechar hoy",
+    "boton_otro_dia": "Ver cómo funciona",
+    "linea_pedido": "Martes loco 2x1 (indica cuál corte)"
+  },
+  "carta": {
+    "estado": "provisional",
+    "eyebrow": "La carta",
+    "titulo": ["Todo a la", "brasa"],
+    "lead": "Todos los cortes vienen con guarnición. Precios con servicio e IVA incluidos.",
+    "nota": "Carta tomada del menú provisional publicado en Instagram. Los precios se actualizarán con la carta oficial.",
+    "nota_por_confirmar": "Los platos con la marca “por confirmar” tienen nombre o precio sin validar.",
+    "categorias": [
+      { "id": "res", "nombre": "Res", "items": [
+        { "nombre": "Tres Res", "precio": 20.99, "desc": "Picaña americana, bife de chorizo uruguayo y lomo fino importado." },
+        { "nombre": "Lomo fino", "precio": 12.50, "desc": "A la pimienta, con champiñones o con jalapeño." },
+        { "nombre": "Filet mignon", "precio": 13.99, "desc": "" },
+        { "nombre": "Bife de chorizo uruguayo", "precio": 15.99, "desc": "" }
+      ]},
+      { "id": "pic", "nombre": "Picañas", "items": [
+        { "nombre": "Picaña uruguaya", "precio": 15.99, "desc": "Premium." },
+        { "nombre": "Picaña americana", "precio": 18.99, "desc": "Premium." }
+      ]},
+      { "id": "cer", "nombre": "Cerdo", "items": [
+        { "nombre": "Tres Cerditos", "precio": 13.99, "desc": "Matambre, panceta y lomo fino." },
+        { "nombre": "Tomahawk", "precio": 17.99, "desc": "" },
+        { "nombre": "Lomo fino de cerdo", "precio": 12.99, "desc": "" },
+        { "nombre": "Panceta", "precio": 9.99, "desc": "Crujiente." },
+        { "nombre": "Matambre", "precio": 13.99, "desc": "" },
+        { "nombre": "Picaña de cerdo", "precio": 12.99, "desc": "" },
+        { "nombre": "Chuleta Kldero", "precio": 8.99, "desc": "" },
+        { "nombre": "Costillas St. Louis", "precio": 12.99, "desc": "BBQ con Jack Daniel's." },
+        { "nombre": "Costillas Baby St. Louis", "precio": 9.99, "desc": "BBQ con Jack Daniel's." },
+        { "nombre": "Baby Back", "precio": 17.99, "desc": "BBQ con Jack Daniel's." },
+        { "nombre": "Costilla tradicional", "precio": 9.99, "desc": "" },
+        { "nombre": "Costilla ahumada", "precio": 11.30, "desc": "" }
+      ]},
+      { "id": "pol", "nombre": "Pollo", "items": [
+        { "nombre": "Pollo al grill", "precio": 7.99, "desc": "" },
+        { "nombre": "Pollo a la provenzal", "precio": 7.99, "desc": "" },
+        { "nombre": "Pollo a la cerveza", "precio": 7.99, "desc": "Con verduras asadas." }
+      ]},
+      { "id": "ent", "nombre": "Entradas", "items": [
+        { "nombre": "Piqueo Kldero", "precio": 10.99, "desc": "Para compartir." },
+        { "nombre": "Mix de embutidos", "precio": 4.99, "desc": "" },
+        { "nombre": "Chistorra", "precio": 5.50, "desc": "" },
+        { "nombre": "Chistorra a la pizza", "precio": 6.50, "desc": "" },
+        { "nombre": "Morcilla", "precio": 3.99, "desc": "Porción." },
+        { "nombre": "Patacones con queso", "precio": 3.50, "desc": "" },
+        { "nombre": "Maduro con queso", "precio": 3.00, "desc": "" }
+      ]},
+      { "id": "gua", "nombre": "Guarniciones", "items": [
+        { "nombre": "Papas rústicas", "precio": 2.00, "desc": "" },
+        { "nombre": "Papas cheddar", "precio": 3.00, "desc": "" },
+        { "nombre": "Papas cheddar bacon", "precio": 3.50, "desc": "" },
+        { "nombre": "Ensalada César", "precio": 3.00, "desc": "" },
+        { "nombre": "Porción de morocho", "precio": 3.50, "desc": "", "estado": "por_confirmar" },
+        { "nombre": "Moro de lenteja", "precio": 3.00, "desc": "" },
+        { "nombre": "Arroz con menestra", "precio": 3.00, "desc": "" },
+        { "nombre": "Porción de menestra", "precio": 2.00, "desc": "" }
+      ]},
+      { "id": "coc", "nombre": "Cócteles", "items": [
+        { "nombre": "Margarita normal o frozen", "precio": 5.99, "desc": "Tequila blanco reposado, Marie Brizard y limón." },
+        { "nombre": "Moscow mule", "precio": 5.99, "desc": "Vodka, limón y ginger beer." },
+        { "nombre": "Mojito", "precio": 5.99, "desc": "Bacardí, lima, hierbabuena y soda." },
+        { "nombre": "Blueberry mojito", "precio": 5.99, "desc": "" },
+        { "nombre": "Caipiriña", "precio": 5.99, "desc": "Cachaça, lima y azúcar." },
+        { "nombre": "Piña colada", "precio": 5.99, "desc": "Ron blanco, leche de coco y piña." },
+        { "nombre": "Tequila sunrise", "precio": 5.99, "desc": "Tequila, naranja y granadina." },
+        { "nombre": "Cuba libre", "precio": 5.99, "desc": "" },
+        { "nombre": "Long Island", "precio": 5.99, "desc": "" },
+        { "nombre": "Apple martini", "precio": 5.99, "desc": "" },
+        { "nombre": "Paloma", "precio": 5.99, "desc": "" },
+        { "nombre": "Milkshake de Oreo o con licor", "precio": 5.99, "desc": "" },
+        { "nombre": "Mimosa", "precio": 4.99, "desc": "Naranja y champagne." },
+        { "nombre": "Copa de vino", "precio": 3.99, "desc": "" }
+      ]},
+      { "id": "beb", "nombre": "Bebidas", "items": [
+        { "nombre": "Jugos naturales", "precio": 2.99, "desc": "" },
+        { "nombre": "Limonada", "precio": 2.99, "desc": "", "estado": "por_confirmar" },
+        { "nombre": "Colas", "precio": 1.99, "desc": "" },
+        { "nombre": "Fuze Tea", "precio": 1.99, "desc": "" },
+        { "nombre": "Agua sin gas", "precio": 1.75, "desc": "" },
+        { "nombre": "Frozen", "precio": 2.99, "desc": "" },
+        { "nombre": "Frozen mixtos", "precio": 3.50, "desc": "" },
+        { "nombre": "Pilsener light", "precio": 2.99, "desc": "" },
+        { "nombre": "Club verde", "precio": 2.99, "desc": "" },
+        { "nombre": "Stella Artois", "precio": 4.50, "desc": "" },
+        { "nombre": "Corona", "precio": 4.50, "desc": "" },
+        { "nombre": "Michelada nacional", "precio": 4.50, "desc": "" }
+      ]}
+    ]
+  },
+  "zona_horaria": "America/Guayaquil",
+  "horario": [
+    { "etiqueta": "Dom a jue", "dias": [0, 1, 2, 3, 4], "abre": 13, "cierra": 22 },
+    { "etiqueta": "Vie y sáb", "dias": [5, 6], "abre": 13, "cierra": 24 }
+  ],
+  "locales_seccion": {
+    "eyebrow": "Tres locales",
+    "titulo": ["Elige tu", "mesa"],
+    "show_dias": [5, 6],
+    "show_etiqueta": "vie y sáb"
+  },
+  "locales": [
+    { "id": "higueras", "n": "1", "nombre": "Higueras", "direccion": "Víctor Emilio Estrada e Higueras", "zona": "Urdesa", "show_en_vivo": true, "mapa": "Kldero Steak Club Higueras Urdesa Guayaquil", "horario_estado": "completo" },
+    { "id": "monjas", "n": "2", "nombre": "Monjas", "direccion": "V. E. Estrada, entre Monjas y Ficus", "zona": "Urdesa", "show_en_vivo": false, "mapa": "Kldero Steak Club Monjas Urdesa Guayaquil", "horario_estado": "completo" },
+    { "id": "guayarte", "n": "3", "nombre": "Plaza Guayarte", "direccion": "Frente a la Católica", "zona": "Guayaquil", "show_en_vivo": true, "mapa": "Kldero Steak Club Plaza Guayarte Guayaquil", "horario_estado": "por_confirmar" }
+  ],
+  "agenda": {
+    "eyebrow": "Shows en vivo",
+    "titulo": ["La noche", "suena"]
+  },
+  "eventos": [
+    {
+      "id": "salsa-brava",
+      "dia_semana": "Sáb",
+      "mes": "Nov",
+      "dia": "14",
+      "titulo": "Noche de Salsa Brava",
+      "texto": "Hoy mandamos las mujeres. Amor, despecho y música para gozar, con Kim Rosales en vivo. Grupo de 4 mujeres o más: jarra de sangría gratis.",
+      "hora": "8:30 pm",
+      "local": "Kldero Higueras",
+      "local_id": "higueras",
+      "inicio_utc": "2026-11-15T01:30:00Z",
+      "final": "¡Fue un éxito! Atento al próximo show",
+      "boton": "Reservar para el show"
+    }
+  ],
+  "semanal": [
+    { "titulo": "Viernes y sábado", "texto": "Show en vivo en Higueras y Plaza Guayarte." },
+    { "titulo": "Cumpleaños", "texto": "Celebra con tu mesa. Cuéntanos la ocasión al reservar." },
+    { "titulo": "Martes loco", "texto_ref": "martes_loco.texto_corto" }
+  ],
+  "pedir": {
+    "eyebrow": "Pide donde estés",
+    "titulo": ["Tres maneras de", "pedir"],
+    "envio": { "precio": null, "texto_sin_precio": "Envío: por confirmar por WhatsApp" },
+    "formas": [
+      { "letra": "A", "titulo": "Por WhatsApp", "texto": "Arma tu pedido aquí, con cantidades, dirección y forma de pago, y llega listo al WhatsApp de pedidos 099 798 6596.", "boton": "Armar mi pedido", "accion": "carrito" },
+      { "letra": "B", "titulo": "PedidosYa", "texto": "Prefieres la app. Kldero Steak Club también está en PedidosYa.", "boton": "Ir a PedidosYa", "accion": "pedidosya" },
+      { "letra": "C", "titulo": "En el local", "texto": "Tres locales en Guayaquil, con mesas para grupos y shows en vivo los fines de semana.", "boton": "Ver locales", "accion": "locales" }
+    ]
+  },
+  "pedidosya": {
+    "url": "https://www.pedidosya.com.ec",
+    "estado": "por_confirmar",
+    "nota": "Enlace por confirmar con Kldero."
+  },
+  "confianza": {
+    "eyebrow": "Kldero en datos",
+    "titulo": ["Lo que", "dicen ellos"],
+    "nota": "Datos tomados del perfil público de Kldero. Sin cifras inventadas.",
+    "cifras": [
+      { "prefijo": "~", "valor": 71, "sufijo": "K", "etiqueta": "seguidores en Instagram" },
+      { "valor": 3, "etiqueta": "locales en Guayaquil" },
+      { "texto": "Efectivo y transferencia", "etiqueta": "formas de pago a domicilio" },
+      { "texto": "PedidosYa", "etiqueta": "también en la app" }
+    ]
+  },
+  "galeria": {
+    "estado": "por_confirmar",
+    "eyebrow": "Galería",
+    "titulo": ["Aquí van", "sus fotos"],
+    "lead": "Estos espacios están reservados para las fotos originales de Kldero, con su autorización. No usamos fotos de archivo.",
+    "texto_tile": "Aquí van sus fotos",
+    "tiles": [
+      { "etiqueta": "Cortes a la brasa", "forma": "grande" },
+      { "etiqueta": "Los tres locales", "forma": "alto" },
+      { "etiqueta": "Show en vivo", "forma": "normal" },
+      { "etiqueta": "Cócteles", "forma": "normal" },
+      { "etiqueta": "Celebraciones", "forma": "ancho" },
+      { "etiqueta": "Platos para compartir", "forma": "ancho" }
+    ]
+  },
+  "faq_seccion": {
+    "eyebrow": "Preguntas frecuentes",
+    "titulo": ["Lo que", "siempre", "preguntan"]
+  },
+  "faq": [
+    { "pregunta": "¿Hacen entregas a domicilio?", "respuesta": "Sí. Puedes pedir por WhatsApp al 099 798 6596 o por PedidosYa." },
+    { "pregunta": "¿Puedo pagar en efectivo?", "respuesta": "Sí, en el domicilio puedes pagar en efectivo o por transferencia. La promo de panceta crujiente aplica solo en efectivo." },
+    { "pregunta": "¿Las promos aplican en todos los locales?", "respuesta": "Sí, las promos aplican en los tres locales. El Martes loco es solo los martes." },
+    { "pregunta": "¿Qué horario tienen?", "respuesta": "De domingo a jueves de 1 pm a 10 pm. Viernes y sábado de 1 pm a medianoche. El horario de Plaza Guayarte está por confirmar." },
+    { "pregunta": "¿Tienen show en vivo?", "respuesta": "Sí, viernes y sábado en Higueras y Plaza Guayarte. Mira la agenda arriba para el próximo evento." },
+    { "pregunta": "¿Los precios incluyen IVA?", "respuesta": "Sí, los precios de la carta incluyen servicio e IVA. El valor del envío se confirma por WhatsApp al hacer el pedido." },
+    { "pregunta": "¿Cuánto cuesta el envío?", "respuesta": null }
+  ],
+  "reserva": {
+    "eyebrow": "Reservas y celebraciones",
+    "titulo": ["Tu mesa,", "lista"],
+    "lead": "Cuéntanos local, fecha y cuántos son. Te abrimos el WhatsApp con la solicitud ya escrita.",
+    "ocasiones": ["Cena normal", "Cumpleaños", "Show en vivo", "Reunión de trabajo", "Otra celebración"],
+    "hora_defecto": "20:00",
+    "hora_minima": "13:00",
+    "personas_defecto": 4,
+    "personas_max": 60,
+    "boton": "Enviar solicitud por WhatsApp",
+    "nota": "La solicitud llega al WhatsApp de pedidos. El canal de reservas se confirma con Kldero."
+  },
+  "pie": {
+    "texto_demo": "Demo de diseño. Las imágenes son ilustraciones referenciales; irán las fotos originales de Kldero."
+  }
+}
