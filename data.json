@@ -65,7 +65,7 @@
     "eyebrow": "Del fuego a tu mesa",
     "titulo": "Crudo, sellado, servido",
     "pasos": [
-      { "num": "01 / 03", "titulo": "Crudo", "texto": "Corte grueso, bien marmoleado, directo de la cámara. Todo empieza con la materia prima." },
+      { "num": "01 / 03", "titulo": "Crudo", "texto": "Corte grueso y marmoleado, listo para la parrilla. Todo empieza con la materia prima." },
       { "num": "02 / 03", "titulo": "Sellado", "texto": "Las brasas lo marcan, la grasa chisporrotea y el humo hace el resto. Aquí se gana el sabor." },
       { "num": "03 / 03", "titulo": "Servido", "texto": "Al plato con guarniciones y bandera uruguaya. Llega humeante, listo para compartir." }
     ]
@@ -214,7 +214,7 @@
       "local": "Kldero Higueras",
       "local_id": "higueras",
       "inicio_utc": "2026-11-15T01:30:00Z",
-      "final": "¡Fue un éxito! Atento al próximo show",
+      "final": "Mira el próximo show en el Instagram de Kldero",
       "boton": "Reservar para el show"
     }
   ],
