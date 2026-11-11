@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+<defs>
+    <linearGradient id="gMeat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a3a24"/><stop offset=".55" stop-color="#6a2216"/><stop offset="1" stop-color="#3a110a"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d48a"/><stop offset="1" stop-color="#a97e2d"/></linearGradient>
+    <radialGradient id="gPlate" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#2a2420"/><stop offset="1" stop-color="#100d0b"/></radialGradient>
+    <radialGradient id="gTosti" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#f4d36b"/><stop offset="1" stop-color="#b98626"/></radialGradient>
+    <linearGradient id="gFat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbefd2"/><stop offset="1" stop-color="#dcc18c"/></linearGradient>
+    <linearGradient id="gPork" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d98f69"/><stop offset=".55" stop-color="#a94e2e"/><stop offset="1" stop-color="#6b2a18"/></linearGradient>
+    <linearGradient id="gBird" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0b856"/><stop offset=".55" stop-color="#bf7522"/><stop offset="1" stop-color="#7a430f"/></linearGradient>
+    <!-- Base de plato y tabla para las ilustraciones de promos -->
+    <g id="prPlate">
+      <ellipse cx="220" cy="300" rx="190" ry="22" fill="#000" opacity=".5"/>
+      <ellipse cx="220" cy="196" rx="206" ry="130" fill="#3d2816" stroke="#1b0f08" stroke-width="2"/>
+      <ellipse cx="220" cy="184" rx="172" ry="104" fill="url(#gPlate)" stroke="url(#gGold)" stroke-width="3"/>
+      <circle cx="92" cy="236" r="22" fill="url(#gTosti)"/><circle cx="92" cy="236" r="22" fill="none" stroke="#7a5314" stroke-width="2"/>
+      <circle cx="350" cy="238" r="18" fill="#c9a25a"/><circle cx="372" cy="216" r="13" fill="#c9a25a"/><circle cx="352" cy="238" r="4" fill="#6d8a3a"/>
+    </g>
+    <g id="prBoard">
+      <ellipse cx="220" cy="302" rx="190" ry="20" fill="#000" opacity=".5"/>
+      <rect x="22" y="76" width="396" height="212" rx="30" fill="#4a3220" stroke="#1b0f08" stroke-width="2"/>
+      <rect x="32" y="84" width="376" height="190" rx="24" fill="#5a3d27"/>
+      <path d="M50 120h340M44 168h352M50 216h340M58 250h324" stroke="#3d2816" stroke-width="2" opacity=".7"/>
+      <rect x="22" y="76" width="396" height="212" rx="30" fill="none" stroke="url(#gGold)" stroke-width="2" opacity=".55"/>
+      <path d="M60 266c26-16 54-24 90-24" stroke="#4d6b2b" stroke-width="4" fill="none" stroke-linecap="round"/><g fill="#4d6b2b"><ellipse cx="86" cy="256" rx="9" ry="3" transform="rotate(-30 86 256)"/><ellipse cx="112" cy="248" rx="9" ry="3" transform="rotate(-22 112 248)"/><ellipse cx="138" cy="243" rx="9" ry="3" transform="rotate(-12 138 243)"/></g>
+    </g>
+    <!-- Cortes -->
+    <g id="cBife">
+      <path d="M4 52C0 26 36 14 88 14s88 12 84 40c-4 30-44 40-86 40S8 82 4 52z" fill="#2e0d07"/>
+      <path d="M4 42C0 16 36 4 88 4s88 12 84 40c-4 30-44 40-86 40S8 72 4 42z" fill="url(#gMeat)" stroke="#2b0d06" stroke-width="2.5"/>
+      <path d="M16 20C44 8 132 6 160 20" fill="none" stroke="url(#gFat)" stroke-width="9" stroke-linecap="round"/>
+      <path d="M44 66L68 22M80 72L106 20M118 68L142 28" stroke="#140604" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+      <path d="M26 40C50 30 100 28 130 36" stroke="#e0775a" stroke-width="2.5" fill="none" opacity=".35" stroke-linecap="round"/>
+    </g>
+    <g id="cPic">
+      <path d="M4 82C0 46 52 18 104 20c40 2 66 18 64 46-2 28-60 36-98 32C32 94 8 100 4 82z" fill="#2e0d07"/>
+      <path d="M4 72C0 36 52 8 104 10c40 2 66 18 64 46-2 28-60 36-98 32C32 84 8 90 4 72z" fill="url(#gMeat)" stroke="#2b0d06" stroke-width="2.5"/>
+      <path d="M9 64C12 30 56 12 104 14c34 2 56 12 62 32" fill="none" stroke="url(#gFat)" stroke-width="13" stroke-linecap="round"/>
+      <path d="M9 64C12 30 56 12 104 14c34 2 56 12 62 32" fill="none" stroke="#c9a463" stroke-width="2" opacity=".7"/>
+      <path d="M50 84L80 38M90 86L120 40M128 78L148 46" stroke="#140604" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+    </g>
+    <g id="cLomo">
+      <ellipse cx="46" cy="50" rx="46" ry="38" fill="#2e0d07"/>
+      <ellipse cx="46" cy="42" rx="46" ry="38" fill="url(#gMeat)" stroke="#2b0d06" stroke-width="2.5"/>
+      <ellipse cx="46" cy="42" rx="34" ry="27" fill="none" stroke="#e0775a" stroke-width="2.5" opacity=".35"/>
+      <path d="M20 62L46 14M44 70L72 18M66 62L82 34" stroke="#140604" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+    </g>
+    <g id="cPorkRound">
+      <ellipse cx="44" cy="46" rx="44" ry="36" fill="#4a1d10"/>
+      <ellipse cx="44" cy="38" rx="44" ry="36" fill="url(#gPork)" stroke="#3a140a" stroke-width="2.5"/>
+      <ellipse cx="44" cy="38" rx="30" ry="23" fill="none" stroke="#f0b99a" stroke-width="2" opacity=".5"/>
+      <path d="M18 56L42 12M42 66L66 16" stroke="#2a0e06" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <g id="cBacon">
+      <rect x="0" y="12" width="140" height="48" rx="12" fill="#5a1d10"/>
+      <rect x="0" y="4" width="140" height="48" rx="12" fill="#b2432b" stroke="#3a140a" stroke-width="2.5"/>
+      <path d="M6 18H134M6 30H134M6 42H134" stroke="#f1d3b0" stroke-width="5" opacity=".9"/>
+      <path d="M6 24H134M6 36H134" stroke="#7a2415" stroke-width="3"/>
+      <path d="M8 8C40 3 100 3 132 8" stroke="#e58a4a" stroke-width="2.5" fill="none" opacity=".8" stroke-linecap="round"/>
+    </g>
+    <g id="cMatambre">
+      <rect x="0" y="10" width="150" height="62" rx="16" fill="#4a1d10"/>
+      <rect x="0" y="2" width="150" height="62" rx="16" fill="url(#gPork)" stroke="#3a140a" stroke-width="2.5"/>
+      <path d="M22 10L42 56M52 8L72 58M82 8L102 58M112 8L132 56" stroke="#2a0e06" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+      <path d="M0 33H150" stroke="#e8d7b0" stroke-width="2.5" stroke-dasharray="7 6" opacity=".85"/>
+    </g>
+    <g id="cStrip">
+      <path d="M0 18q16-18 32 0t32 0t32 0t32 0t32 0" fill="none" stroke="#6a2012" stroke-width="18" stroke-linecap="round"/>
+      <path d="M0 16q16-18 32 0t32 0t32 0t32 0t32 0" fill="none" stroke="#b2432b" stroke-width="14" stroke-linecap="round"/>
+      <path d="M0 16q16-18 32 0t32 0t32 0t32 0t32 0" fill="none" stroke="#f1d3b0" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+      <path d="M2 11q16-18 32 0t32 0t32 0t32 0t32 0" fill="none" stroke="#e58a4a" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+    </g>
+    <g id="cLeg">
+      <path d="M2 56C0 28 40 12 78 22c22 6 34 22 38 34-6 14-30 30-70 30C18 86 4 78 2 56z" fill="#3e2108"/>
+      <path d="M2 46C0 18 40 2 78 12c22 6 34 22 38 34-6 14-30 30-70 30C18 76 4 68 2 46z" fill="url(#gBird)" stroke="#4a2808" stroke-width="2.5"/>
+      <path d="M14 34C30 18 66 14 92 28" fill="none" stroke="#f6d38c" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+      <path d="M30 66L56 22M60 70L86 26" stroke="#2a1404" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+      <path d="M114 44L156 44" stroke="#efe3c8" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="162" cy="37" r="8" fill="#efe3c8" stroke="#b9a77d" stroke-width="1.5"/><circle cx="162" cy="52" r="8" fill="#efe3c8" stroke="#b9a77d" stroke-width="1.5"/>
+    </g>
+    <g id="cThigh">
+      <ellipse cx="66" cy="44" rx="66" ry="36" fill="#3e2108"/>
+      <ellipse cx="66" cy="36" rx="66" ry="36" fill="url(#gBird)" stroke="#4a2808" stroke-width="2.5"/>
+      <path d="M14 28C34 10 94 8 118 26" fill="none" stroke="#f6d38c" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+      <path d="M32 58L56 12M64 62L90 14M94 54L108 24" stroke="#2a1404" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+    </g>
+</defs>
+  <symbol id="pr-bife" viewBox="0 0 440 340"><use href="#prPlate"/><use href="#cBife" transform="translate(64 112) rotate(-8)"/><use href="#cBife" transform="translate(200 150) rotate(5)"/></symbol>
+  <symbol id="pr-pic" viewBox="0 0 440 340"><use href="#prPlate"/><use href="#cPic" transform="translate(66 104) rotate(-10)"/><use href="#cPic" transform="translate(198 144) rotate(6)"/></symbol>
+  <symbol id="pr-cerd" viewBox="0 0 440 340"><use href="#prPlate"/><use href="#cPorkRound" transform="translate(96 108)"/><use href="#cBacon" transform="translate(216 98) rotate(10)"/><use href="#cMatambre" transform="translate(142 190) rotate(-4)"/></symbol>
+  <symbol id="pr-tres" viewBox="0 0 440 340"><use href="#prBoard"/><use href="#cPic" transform="translate(40 106) scale(.8) rotate(-8)"/><use href="#cBife" transform="translate(150 98) scale(.82) rotate(3)"/><use href="#cLomo" transform="translate(290 112) scale(.95)"/></symbol>
+  <symbol id="pr-panc" viewBox="0 0 440 340"><use href="#prPlate"/><g transform="translate(70 118) rotate(-6)"><use href="#cStrip"/><use href="#cStrip" transform="translate(14 28)"/><use href="#cStrip" transform="translate(-4 56)"/></g><g transform="translate(222 142) rotate(5)"><use href="#cStrip" transform="translate(6 0)"/><use href="#cStrip" transform="translate(-6 28)"/><use href="#cStrip" transform="translate(8 56)"/></g></symbol>
+  <symbol id="pr-poll" viewBox="0 0 440 340"><use href="#prPlate"/><use href="#cLeg" transform="translate(58 100) rotate(-12)"/><use href="#cLeg" transform="translate(112 196) rotate(6) scale(.95)"/><use href="#cThigh" transform="translate(230 112) rotate(8)"/><path d="M330 230a30 30 0 0 1 56 0z" fill="#f2d24a" stroke="#b99a1c" stroke-width="2" transform="rotate(-10 358 230)"/></symbol>
+</svg>
