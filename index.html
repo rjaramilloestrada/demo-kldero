@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kldero Steak Club | Parrilla uruguaya en Guayaquil</title>
+<meta name="description" content="Parrilla uruguaya en Guayaquil. Promos, menú, tres locales, shows en vivo y pedidos por WhatsApp.">
+<meta name="theme-color" content="#0a0908">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta property="og:title" content="Kldero Steak Club | Parrilla uruguaya en Guayaquil">
+<meta property="og:description" content="Parrilla uruguaya en Guayaquil. Promos, menú, tres locales, shows en vivo y pedidos por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_EC">
+<meta property="og:url" content="https://rjaramilloestrada.github.io/demo-kldero/">
+<meta property="og:image" content="https://rjaramilloestrada.github.io/demo-kldero/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kldero Steak Club | Parrilla uruguaya en Guayaquil">
+<meta name="twitter:description" content="Parrilla uruguaya en Guayaquil. Promos, menú, tres locales, shows en vivo y pedidos por WhatsApp.">
+<meta name="twitter:image" content="https://rjaramilloestrada.github.io/demo-kldero/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Manrope:wght@400;600;800&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+/* Plan: carbón con textura de piedra, dorado de marca, brasa como único color vivo.
+   Idea de layout: poster nocturno de parrilla. Un gran momento (el corte que se sella al hacer scroll), el resto sobrio. */
+:root{
+  --coal:#0a0908;
+  --char:#14110f;
+  --slate:#1d1916;
+  --gold:#c8a04a;
+  --gold-hi:#f0d48a;
+  --ember:#e4572e;
+  --bone:#f3eadb;
+  --mute:#a69d8d;
+  --line:rgba(200,160,74,.22);
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
+  --body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --sear:0;
+  --p:0;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--coal);color:var(--bone);font-family:var(--body);font-size:16px;line-height:1.55;overflow-x:hidden}
+body::before{ /* grano de piedra */
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(rgba(200,160,74,.03) 1px,transparent 1px);
+  background-size:3px 3px,7px 7px;background-position:0 0,1px 2px}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto;position:relative;z-index:1}
+section{position:relative;z-index:1;padding:88px 0}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.92;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance}
+h2{font-size:clamp(44px,8vw,92px)}
+.script{font-family:var(--script);font-weight:400;text-transform:none;color:var(--gold-hi);letter-spacing:0}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.lead{color:var(--mute);max-width:56ch;margin-top:16px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.meander{height:12px;width:100%;opacity:.7;margin-bottom:28px}
+
+/* progreso de scroll */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--ember),var(--gold-hi));z-index:60}
+
+/* cursor de brasa */
+#glow{position:fixed;left:0;top:0;width:260px;height:260px;margin:-130px 0 0 -130px;border-radius:50%;pointer-events:none;z-index:2;
+  background:radial-gradient(circle,rgba(228,87,46,.16),rgba(200,160,74,.05) 45%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .4s}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:14px 0;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(10,9,8,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{width:36px;height:36px;flex:none}
+.brand b{font-family:var(--display);font-size:24px;font-weight:900;letter-spacing:.18em;line-height:1}
+.brand small{display:block;font-size:9px;letter-spacing:.34em;color:var(--gold);font-weight:800;margin-top:2px}
+.links{display:none;gap:26px;font-size:13px;font-weight:600;letter-spacing:.06em}
+.links a{text-decoration:none;color:var(--mute);transition:color .2s}
+.links a:hover{color:var(--gold-hi)}
+@media(min-width:900px){.links{display:flex}}
+
+/* BOTONES */
+.btn{--bg:transparent;--fg:var(--bone);--bd:var(--line);display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:999px;border:1px solid var(--bd);background:var(--bg);color:var(--fg);font-weight:800;font-size:14px;letter-spacing:.04em;text-decoration:none;position:relative;overflow:hidden;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s;will-change:transform}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
+.btn:hover::after{transform:translateX(120%)}
+.btn.gold{--bg:linear-gradient(180deg,var(--gold-hi),var(--gold));--fg:#1a1306;--bd:transparent;box-shadow:0 8px 30px -8px rgba(200,160,74,.55)}
+.btn.fire{--bg:linear-gradient(180deg,#f0693a,var(--ember));--fg:#fff;--bd:transparent;box-shadow:0 8px 30px -8px rgba(228,87,46,.6)}
+.btn.ghost:hover{background:rgba(200,160,74,.1);border-color:var(--gold)}
+.btn.small{padding:10px 18px;font-size:13px}
+
+/* HERO */
+.hero{padding:132px 0 56px;min-height:min(900px,100svh);display:flex;align-items:center;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.05fr .95fr}}
+.status{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(20,17,15,.7);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;width:max-content;max-width:100%}
+.dot{width:8px;height:8px;border-radius:50%;background:#6b6358;flex:none}
+.dot.on{background:#53d37a;box-shadow:0 0 0 0 rgba(83,211,122,.6);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(83,211,122,0)}100%{box-shadow:0 0 0 0 rgba(83,211,122,0)}}
+.hero h1{font-size:clamp(68px,15vw,176px);margin:18px 0 6px;min-height:1.84em}
+.hero h1 .l{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*55ms)}
+@keyframes rise{from{transform:translateY(40%) rotate(4deg);opacity:.0}to{transform:none;opacity:1}}
+.hero .sub{font-size:clamp(34px,6vw,58px);line-height:1;display:block;margin-bottom:18px}
+.hero p.lead{margin-top:0;font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.martes{display:none;margin-top:22px;padding:14px 18px;border-radius:14px;border:1px solid rgba(228,87,46,.5);background:linear-gradient(90deg,rgba(228,87,46,.18),transparent);font-weight:800;align-items:center;gap:12px}
+.martes.show{display:flex}
+.martes .script{font-size:30px;line-height:1}
+.plate-wrap{position:relative;aspect-ratio:1/.82;width:100%;max-width:620px;margin-inline:auto}
+.plate-wrap svg.steak{width:100%;height:100%;overflow:visible;transform:translateY(calc(var(--p)*40px)) rotate(calc(var(--p)*-6deg)) scale(calc(1 + var(--p)*.08));filter:drop-shadow(0 40px 60px rgba(0,0,0,.7))}
+.halo{position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(circle,rgba(228,87,46,calc(.15 + var(--sear)*.35)),transparent 65%);filter:blur(30px)}
+.ph-note{position:absolute;right:0;bottom:-6px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:800}
+.scrollcue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:22px;height:36px;border:1.5px solid var(--gold);border-radius:12px;z-index:1;display:none}
+.scrollcue::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--gold-hi);animation:cue 1.6s infinite}
+@keyframes cue{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(14px)}}
+@media(min-width:900px){.scrollcue{display:block}}
+
+/* steak svg anim */
+.steam path{stroke:rgba(255,236,210,.5);fill:none;stroke-width:3;stroke-linecap:round;animation:steam 3.4s ease-in-out infinite;transform-origin:50% 100%}
+.steam path:nth-child(2){animation-delay:-1.1s}.steam path:nth-child(3){animation-delay:-2.2s}
+@keyframes steam{0%{opacity:0;transform:translateY(10px) scaleY(.7)}40%{opacity:.8}100%{opacity:0;transform:translateY(-34px) scaleY(1.2)}}
+.marks{opacity:var(--sear);transition:opacity .15s linear}
+
+/* MARQUEE */
+.marquee{padding:0;border-block:1px solid var(--line);background:var(--char);overflow:hidden;z-index:1;position:relative}
+.marquee-track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;padding:18px 28px;white-space:nowrap;display:flex;align-items:center;gap:28px}
+.marquee span::after{content:"✦";color:var(--gold);font-size:16px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* PROMOS */
+.promos{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.promo{--mx:50%;--my:50%;position:relative;border-radius:22px;border:1px solid var(--line);background:linear-gradient(160deg,var(--slate),var(--char));padding:26px;display:flex;flex-direction:column;gap:6px;overflow:hidden;transform-style:preserve-3d;transition:transform .25s ease-out,border-color .3s;min-height:360px}
+.promo::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(240,212,138,.16),transparent 55%);opacity:0;transition:opacity .3s;pointer-events:none}
+.promo:hover{border-color:rgba(240,212,138,.6)}
+.promo:hover::before{opacity:1}
+.promo .art{height:130px;margin:-6px -10px 6px;display:flex;justify-content:center}
+.promo .art svg{height:100%;width:auto;overflow:visible}
+.promo .what{font-family:var(--script);font-size:34px;color:var(--gold-hi);line-height:1}
+.promo .name{font-family:var(--display);font-weight:800;font-size:30px;text-transform:uppercase;line-height:1}
+.promo .price{font-family:var(--display);font-weight:900;font-size:76px;line-height:.95;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:auto}
+.promo .price sup{font-size:.42em;vertical-align:top;margin-right:2px;color:var(--gold)}
+.promo .cond{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:5px 11px;width:max-content}
+.promo .btn{margin-top:14px;align-self:flex-start}
+.promo.hot{border-color:var(--ember);box-shadow:0 0 0 1px var(--ember),0 20px 60px -20px rgba(228,87,46,.5)}
+.promo .flag{position:absolute;top:16px;right:-34px;transform:rotate(36deg);background:var(--ember);color:#fff;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 40px}
+.promo.martes-card{grid-column:1/-1;min-height:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:18px 28px}
+.promo.martes-card .price{margin-top:0;font-size:84px}
+.promo.martes-card .btn{margin-top:0;margin-left:auto}
+.note{margin-top:18px;font-size:13px;color:var(--mute)}
+
+/* MENU */
+.menu{background:linear-gradient(180deg,transparent,rgba(20,17,15,.8) 12%,rgba(20,17,15,.8) 88%,transparent)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 12px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent;-webkit-overflow-scrolling:touch}
+.tab{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:11px 20px;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);transition:all .25s}
+.tab:hover{color:var(--bone);border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--gold);color:#1a1306;border-color:var(--gold)}
+.menu-grid{display:grid;gap:0 48px;margin-top:20px}
+@media(min-width:820px){.menu-grid{grid-template-columns:1fr 1fr}}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:baseline;padding:18px 0;border-bottom:1px dashed rgba(200,160,74,.2);animation:in .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*40ms)}
+@keyframes in{from{transform:translateY(16px);opacity:.2}to{transform:none;opacity:1}}
+.item h3{font-size:26px;line-height:1.02}
+.item .d{grid-column:1;color:var(--mute);font-size:14px}
+.item .pr{font-family:var(--display);font-weight:800;font-size:28px;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.add{grid-column:2;grid-row:2;justify-self:end;width:36px;height:36px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--gold-hi);font-size:20px;line-height:1;transition:all .2s;display:grid;place-items:center}
+.add:hover{background:var(--gold);color:#1a1306;transform:rotate(90deg)}
+.add.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.35)}}
+.menu-foot{margin-top:22px;font-size:13px;color:var(--mute)}
+
+/* LOCALES */
+.loc{display:grid;gap:20px}
+@media(min-width:900px){.loc{grid-template-columns:.8fr 1.2fr;gap:36px}}
+.loc-list{display:grid;gap:10px}
+.loc-btn{text-align:left;padding:20px 22px;border-radius:18px;border:1px solid var(--line);background:var(--char);transition:all .3s;display:flex;align-items:center;gap:16px;position:relative}
+.loc-btn .n{font-family:var(--display);font-weight:900;font-size:40px;color:var(--gold);line-height:1;width:34px;flex:none}
+.loc-btn b{display:block;font-family:var(--display);font-size:26px;text-transform:uppercase;line-height:1}
+.loc-btn small{color:var(--mute);font-size:13px}
+.loc-btn[aria-pressed="true"]{border-color:var(--gold-hi);background:linear-gradient(120deg,rgba(200,160,74,.18),var(--char))}
+.loc-btn[aria-pressed="true"] .pulse{opacity:1}
+.pulse{position:absolute;right:20px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--gold-hi);opacity:0;animation:ring 1.8s infinite}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(240,212,138,.7)}100%{box-shadow:0 0 0 16px rgba(240,212,138,0)}}
+.loc-card{border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,var(--slate),var(--char));padding:clamp(22px,4vw,40px);display:flex;flex-direction:column;gap:16px;min-height:360px}
+.loc-card h3{font-size:clamp(40px,6vw,64px)}
+.loc-card .addr{font-size:18px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:inline-flex;align-items:center;gap:8px;border-radius:999px;border:1px solid var(--line);padding:7px 14px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.badge.live{border-color:var(--ember);color:#ffb59d;background:rgba(228,87,46,.12)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 22px;font-size:15px;color:var(--mute)}
+.hours b{color:var(--bone)}
+.hours .today{color:var(--gold-hi)}
+.swap{animation:in .5s both}
+
+/* AGENDA */
+.agenda{display:grid;gap:16px}
+@media(min-width:900px){.agenda{grid-template-columns:1.2fr .8fr}}
+.event{border-radius:24px;overflow:hidden;position:relative;padding:clamp(26px,4vw,48px);background:radial-gradient(120% 120% at 100% 0%,rgba(200,160,74,.35),transparent 55%),linear-gradient(160deg,#241b10,var(--char));border:1px solid rgba(200,160,74,.45);display:flex;flex-direction:column;gap:12px;min-height:340px}
+.event .date{font-family:var(--display);font-weight:900;font-size:120px;line-height:.85;color:var(--gold-hi)}
+.event .date small{font-size:30px;letter-spacing:.1em;display:block;color:var(--gold)}
+.event h3{font-size:clamp(40px,6vw,64px)}
+.event p{color:#d6c9b0;max-width:42ch}
+.weekly{display:grid;gap:12px;align-content:start}
+.wk{border:1px solid var(--line);border-radius:20px;padding:22px;background:var(--char)}
+.wk b{font-family:var(--display);font-size:30px;text-transform:uppercase;display:block;line-height:1}
+.wk span{color:var(--mute);font-size:14px}
+
+/* FORM RESERVAS */
+.reserve{display:grid;gap:32px}
+@media(min-width:900px){.reserve{grid-template-columns:.9fr 1.1fr;gap:56px}}
+form.card{border-radius:24px;border:1px solid var(--line);background:var(--char);padding:clamp(20px,4vw,36px);display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.f{display:grid;gap:6px}
+.f.full{grid-column:1/-1}
+label,legend{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+input,select,textarea{font:inherit;width:100%;color:var(--bone);background:var(--coal);border:1px solid var(--line);border-radius:12px;padding:13px 14px;color-scheme:dark}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold-hi);outline-offset:1px}
+.seg{display:flex;gap:8px;flex-wrap:wrap;border:0;padding:0}
+.seg label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;letter-spacing:.06em;color:var(--bone);cursor:pointer;text-transform:none;font-size:14px;font-weight:600}
+.seg input{width:auto;accent-color:var(--gold)}
+.warn{grid-column:1/-1;display:none;font-size:13px;padding:10px 14px;border-radius:12px;background:rgba(228,87,46,.12);border:1px solid rgba(228,87,46,.45);color:#ffc4b0}
+.warn.show{display:block}
+
+/* DOMICILIO */
+.deliver{display:grid;gap:14px}
+@media(min-width:820px){.deliver{grid-template-columns:repeat(3,1fr)}}
+.way{border-radius:22px;border:1px solid var(--line);background:var(--char);padding:26px;display:flex;flex-direction:column;gap:10px}
+.way .no{font-family:var(--display);font-weight:900;font-size:56px;line-height:.9;color:var(--gold)}
+.way h3{font-size:34px}
+.way p{color:var(--mute);font-size:15px}
+.way .btn{margin-top:auto;align-self:flex-start}
+
+/* FAQ */
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:16px 0;font-family:var(--display);font-weight:800;font-size:28px;text-transform:uppercase;line-height:1}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:34px;color:var(--gold);transition:transform .3s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mute);padding-bottom:18px;max-width:64ch}
+
+/* FOOTER */
+footer{position:relative;z-index:1;border-top:1px solid var(--line);background:var(--char);padding:56px 0 120px}
+.foot{display:grid;gap:32px}
+@media(min-width:820px){.foot{grid-template-columns:1.3fr 1fr 1fr}}
+footer .fh{font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+footer a{display:block;text-decoration:none;color:var(--mute);padding:3px 0}
+footer a:hover{color:var(--gold-hi)}
+.big{font-family:var(--display);font-weight:900;font-size:clamp(60px,11vw,140px);line-height:.85;text-transform:uppercase;letter-spacing:.02em}
+.demo{margin-top:40px;padding-top:22px;border-top:1px dashed var(--line);display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;font-size:12px;color:var(--mute)}
+.sim{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.sim button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;color:var(--mute)}
+.sim button[aria-pressed="true"]{background:var(--gold);color:#1a1306;border-color:var(--gold)}
+
+/* CARRITO */
+#fab{position:fixed;right:16px;bottom:16px;z-index:55;display:none;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;border:0;background:linear-gradient(180deg,#f0693a,var(--ember));color:#fff;font-weight:800;box-shadow:0 14px 40px -8px rgba(228,87,46,.7);animation:fabin .5s cubic-bezier(.2,.8,.2,1)}
+#fab.show{display:flex}
+@keyframes fabin{from{transform:translateY(80px)}}
+#fab .cnt{background:#fff;color:var(--ember);border-radius:50%;min-width:26px;height:26px;display:grid;place-items:center;font-size:13px}
+#veil{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+#veil.open{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--char);border-left:1px solid var(--line);z-index:71;transform:translateX(102%);transition:transform .45s cubic-bezier(.2,.8,.2,1),visibility 0s .45s;visibility:hidden;display:flex;flex-direction:column}
+#drawer.open{transform:none;visibility:visible;transition-delay:0s}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h3{font-size:38px}
+.x{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:18px}
+.db{flex:1;overflow:auto;padding:8px 22px 22px}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:center}
+.row b{font-weight:800}
+.qty{display:flex;align-items:center;gap:10px;grid-column:1}
+.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);background:transparent;line-height:1}
+.empty{padding:40px 0;color:var(--mute);text-align:center}
+.df{border-top:1px solid var(--line);padding:18px 22px 22px;display:grid;gap:12px;background:var(--coal)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--display);font-weight:800;font-size:34px;text-transform:uppercase}
+.tot small{font-family:var(--body);font-size:12px;color:var(--mute);font-weight:400;text-transform:none;display:block}
+.dform{display:grid;gap:12px;padding-top:14px}
+
+/* reveals */
+.rv{transform:translateY(34px);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{transform:none}
+.promo.rv.in{transition:transform .25s ease-out,border-color .3s;transition-delay:0s!important}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{transform:none}
+  #glow{display:none}
+}
+@media(max-width:560px){section{padding:64px 0}.event .date{font-size:92px}.promo.martes-card .btn{margin-left:0}form.card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="glow"></div>
+
+<!-- Símbolos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gMeat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a3a24"/><stop offset=".55" stop-color="#6a2216"/><stop offset="1" stop-color="#3a110a"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0d48a"/><stop offset="1" stop-color="#a97e2d"/></linearGradient>
+    <radialGradient id="gPlate" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#2a2420"/><stop offset="1" stop-color="#100d0b"/></radialGradient>
+    <radialGradient id="gTosti" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#f4d36b"/><stop offset="1" stop-color="#b98626"/></radialGradient>
+    <clipPath id="cSteak"><path id="pSteak" d="M92 168C84 120 160 78 246 86c88 8 118 60 98 108-20 48-124 66-188 44-46-16-60-40-64-70z"/></clipPath>
+    <filter id="heat" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence id="turb" type="fractalNoise" baseFrequency="0.012 0.03" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="#c8a04a" stroke-width="1.5"/><path d="M8 13c3 3 6 3 8 0M32 13c-3 3-6 3-8 0" fill="none" stroke="#f0d48a" stroke-width="2" stroke-linecap="round"/><text x="20" y="29" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="900" font-size="18" fill="#f0d48a" letter-spacing="1">KC</text></svg>
+      <span><b>KLDERO</b><small>STEAK CLUB</small></span>
+    </a>
+    <div class="links">
+      <a href="#promos">Promos</a><a href="#menu">Menú</a><a href="#locales">Locales</a><a href="#agenda">Shows</a><a href="#reservas">Reservas</a>
+    </div>
+    <button class="btn fire small" data-open-cart type="button">Mi pedido</button>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<header class="hero" id="hero">
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="status" id="heroStatus"><span class="dot"></span><span id="heroStatusTxt">Abriendo…</span></div>
+      <h1 aria-label="Parrilla uruguaya"><span id="h1a"></span></h1>
+      <span class="script sub">cortes que se escuchan en Guayaquil</span>
+      <p class="lead">Bife de chorizo y picaña uruguaya, tres cerditos y panceta crujiente, a la brasa. Tres locales, show en vivo y entrega a domicilio.</p>
+      <div class="cta">
+        <a class="btn gold" href="#menu" data-mag>Ver menú</a>
+        <button class="btn fire" type="button" data-open-cart data-mag>Pedir a domicilio</button>
+        <a class="btn ghost" href="#reservas" data-mag>Reservar mesa</a>
+      </div>
+      <div class="martes" id="martesBanner"><span class="script">Hoy es Martes loco</span><span>2x1 en Tres Cerditos, Picaña de cerdo y Lomo fino de cerdo.</span></div>
+    </div>
+    <div class="plate-wrap" aria-hidden="true">
+      <div class="halo"></div>
+      <svg class="steak" viewBox="0 0 440 340" aria-hidden="true">
+        <ellipse cx="220" cy="296" rx="196" ry="26" fill="#000" opacity=".55"/>
+        <ellipse cx="220" cy="196" rx="210" ry="136" fill="#2b1b10"/>
+        <ellipse cx="220" cy="192" rx="200" ry="128" fill="#3d2816" stroke="#1b0f08" stroke-width="2"/>
+        <ellipse cx="220" cy="178" rx="172" ry="106" fill="url(#gPlate)" stroke="url(#gGold)" stroke-width="3"/>
+        <!-- guarniciones -->
+        <g>
+          <circle cx="104" cy="226" r="26" fill="url(#gTosti)"/><circle cx="104" cy="226" r="26" fill="none" stroke="#7a5314" stroke-width="2"/>
+          <circle cx="150" cy="250" r="22" fill="url(#gTosti)"/><circle cx="150" cy="250" r="22" fill="none" stroke="#7a5314" stroke-width="2"/>
+          <circle cx="330" cy="236" r="19" fill="#c9a25a"/><circle cx="356" cy="214" r="15" fill="#c9a25a"/>
+          <circle cx="333" cy="236" r="5" fill="#6d8a3a" opacity=".9"/>
+        </g>
+        <!-- corte -->
+        <g filter="url(#heat)">
+          <path d="M92 168C84 120 160 78 246 86c88 8 118 60 98 108-20 48-124 66-188 44-46-16-60-40-64-70z" fill="url(#gMeat)"/>
+          <path d="M120 150C130 112 190 98 246 104c64 6 90 40 78 74" fill="none" stroke="#e0775a" stroke-width="3" opacity=".35" stroke-linecap="round"/>
+          <g clip-path="url(#cSteak)" class="marks" stroke="#140604" stroke-width="12" stroke-linecap="round">
+            <path d="M70 230L220 70M110 262L290 70M170 270L350 100M230 272L360 140"/>
+          </g>
+          <path d="M92 168C84 120 160 78 246 86c88 8 118 60 98 108-20 48-124 66-188 44-46-16-60-40-64-70z" fill="none" stroke="#2b0d06" stroke-width="3"/>
+        </g>
+        <!-- romero -->
+        <path d="M268 232c20-24 40-36 70-40" stroke="#4d6b2b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <g fill="#4d6b2b"><ellipse cx="290" cy="216" rx="9" ry="3" transform="rotate(-40 290 216)"/><ellipse cx="312" cy="204" rx="9" ry="3" transform="rotate(-30 312 204)"/><ellipse cx="332" cy="196" rx="9" ry="3" transform="rotate(-20 332 196)"/></g>
+        <!-- bandera -->
+        <g transform="translate(360 120) rotate(8)"><rect x="-1" y="0" width="3" height="60" fill="#d9c28a"/><rect x="2" y="2" width="34" height="22" fill="#fff"/><path d="M2 8h34M2 14h34M2 20h34" stroke="#2a64b4" stroke-width="3"/><rect x="2" y="2" width="14" height="11" fill="#fff"/><circle cx="9" cy="7.5" r="3" fill="#f3c223"/></g>
+        <g class="steam"><path d="M180 70q-12-22 0-40q12-18 0-34" /><path d="M230 60q-12-22 0-40q12-18 0-34"/><path d="M280 72q-12-22 0-40q12-18 0-34"/></g>
+      </svg>
+      <span class="ph-note">Ilustración referencial</span>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"></div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="marq"></div></div>
+
+<!-- PROMOS -->
+<section id="promos">
+  <div class="wrap">
+    <svg class="meander" aria-hidden="true"><defs><pattern id="mea" width="24" height="12" patternUnits="userSpaceOnUse"><path d="M0 11H8V3H20V9H14V6" fill="none" stroke="#c8a04a" stroke-width="1.5"/></pattern></defs><rect width="100%" height="12" fill="url(#mea)"/></svg>
+    <div class="head rv">
+      <span class="eyebrow">Promos vigentes</span>
+      <h2>Para dos, <span class="script">y sobra</span></h2>
+      <p class="lead">Cada promo trae su condición a la vista. Toca “Pedir” y se arma tu pedido; lo mandas por WhatsApp.</p>
+    </div>
+    <div class="promos" id="promoGrid"></div>
+    <p class="note">Promos publicadas por Kldero en su Instagram. Todas incluyen guarniciones y aplican en los tres locales, salvo que se indique lo contrario.</p>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">La carta</span>
+      <h2>Todo a la <span class="script">brasa</span></h2>
+      <p class="lead">Todos los cortes vienen con guarnición. Precios con servicio e IVA incluidos.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Categorías del menú" id="tabs"></div>
+    <div class="menu-grid" id="menuGrid" role="tabpanel" tabindex="0" aria-labelledby="tab-res"></div>
+    <p class="menu-foot">Carta tomada del menú provisional publicado en Instagram. Los precios se actualizarán con la carta oficial.</p>
+  </div>
+</section>
+
+<!-- LOCALES -->
+<section id="locales">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Tres locales</span>
+      <h2>Elige tu <span class="script">mesa</span></h2>
+    </div>
+    <div class="loc">
+      <div class="loc-list" id="locList"></div>
+      <div class="loc-card" id="locCard" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Shows en vivo</span>
+      <h2>La noche <span class="script">suena</span></h2>
+    </div>
+    <div class="agenda">
+      <article class="event rv">
+        <div class="date"><small>Sáb · Nov</small>14</div>
+        <h3>Noche de Salsa Brava</h3>
+        <p>Hoy mandamos las mujeres. Amor, despecho y música para gozar, con Kim Rosales en vivo. Grupo de 4 mujeres o más: jarra de sangría gratis.</p>
+        <div class="badges"><span class="badge">8:30 pm</span><span class="badge">Kldero Higueras</span></div>
+        <div class="cta"><a class="btn gold" href="#reservas" data-mag>Reservar para el show</a></div>
+      </article>
+      <div class="weekly rv">
+        <div class="wk"><b>Viernes y sábado</b><span>Show en vivo en Higueras y Plaza Guayarte.</span></div>
+        <div class="wk"><b>Cumpleaños</b><span>Celebra con tu mesa. Cuéntanos la ocasión al reservar.</span></div>
+        <div class="wk"><b>Martes loco</b><span>2x1 en Tres Cerditos, Picaña de cerdo y Lomo fino de cerdo.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMICILIO -->
+<section id="domicilio">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Pide donde estés</span>
+      <h2>Tres maneras de <span class="script">pedir</span></h2>
+    </div>
+    <div class="deliver">
+      <div class="way rv"><span class="no">A</span><h3>Por WhatsApp</h3><p>Arma tu pedido aquí, con cantidades, dirección y forma de pago, y llega listo al WhatsApp de pedidos 099 798 6596.</p><button class="btn fire" type="button" data-open-cart>Armar mi pedido</button></div>
+      <div class="way rv"><span class="no">B</span><h3>PedidosYa</h3><p>Prefieres la app. Kldero Steak Club también está en PedidosYa.</p><a class="btn ghost" href="https://www.pedidosya.com.ec" target="_blank" rel="noopener">Ir a PedidosYa</a></div>
+      <div class="way rv"><span class="no">C</span><h3>En el local</h3><p>Tres locales en Guayaquil, con mesas para grupos y shows en vivo los fines de semana.</p><a class="btn ghost" href="#locales">Ver locales</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVAS -->
+<section class="menu" id="reservas">
+  <div class="wrap reserve">
+    <div class="head rv">
+      <span class="eyebrow">Reservas y celebraciones</span>
+      <h2>Tu mesa, <span class="script">lista</span></h2>
+      <p class="lead">Cuéntanos local, fecha y cuántos son. Te abrimos el WhatsApp con la solicitud ya escrita.</p>
+    </div>
+    <form class="card" id="rform" novalidate>
+      <div class="f"><label for="rl">Local</label><select id="rl"></select></div>
+      <div class="f"><label for="rp">Personas</label><input id="rp" type="number" min="1" max="60" value="4"></div>
+      <div class="f"><label for="rd">Fecha</label><input id="rd" type="date"></div>
+      <div class="f"><label for="rh">Hora</label><input id="rh" type="time" value="20:00" min="13:00"></div>
+      <div class="f"><label for="ro">Ocasión</label><select id="ro"><option>Cena normal</option><option>Cumpleaños</option><option>Show en vivo</option><option>Reunión de trabajo</option><option>Otra celebración</option></select></div>
+      <div class="f"><label for="rn">Tu nombre</label><input id="rn" type="text" autocomplete="name" placeholder="Nombre"></div>
+      <div class="f full"><a class="btn gold" id="resWA" href="#" target="_blank" rel="noopener" data-mag>Enviar solicitud por WhatsApp</a></div>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Preguntas frecuentes</span><h2>Lo que <span class="script">siempre</span> preguntan</h2></div>
+    <details><summary>¿Hacen entregas a domicilio?</summary><p>Sí. Puedes pedir por WhatsApp al 099 798 6596 o por PedidosYa.</p></details>
+    <details><summary>¿Puedo pagar en efectivo?</summary><p>Sí, en el domicilio puedes pagar en efectivo o por transferencia. La promo de panceta crujiente aplica solo en efectivo.</p></details>
+    <details><summary>¿Las promos aplican en todos los locales?</summary><p>Sí, las promos aplican en los tres locales. El Martes loco es solo los martes.</p></details>
+    <details><summary>¿Qué horario tienen?</summary><p>De domingo a jueves de 1 pm a 10 pm. Viernes y sábado de 1 pm a medianoche.</p></details>
+    <details><summary>¿Tienen show en vivo?</summary><p>Sí, viernes y sábado en Higueras y Plaza Guayarte. Mira la agenda arriba para el próximo evento.</p></details>
+    <details><summary>¿Los precios incluyen IVA?</summary><p>Sí, los precios de la carta incluyen servicio e IVA. El valor del envío se confirma por WhatsApp al hacer el pedido.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="big">Kldero<br><span class="script" style="font-size:.7em">steak club</span></div></div>
+      <div><div class="fh">Contacto</div><a href="https://wa.me/593997986596" target="_blank" rel="noopener">WhatsApp pedidos · 099 798 6596</a><a href="https://www.instagram.com/kldero.ec/" target="_blank" rel="noopener">Instagram · @kldero.ec</a><a href="https://www.tiktok.com/@kldero.ec" target="_blank" rel="noopener">TikTok · @kldero.ec</a><a href="https://www.pedidosya.com.ec" target="_blank" rel="noopener">PedidosYa</a></div>
+      <div><div class="fh">Locales</div><span style="color:var(--mute);display:block">Higueras, Urdesa</span><span style="color:var(--mute);display:block">Monjas, Urdesa</span><span style="color:var(--mute);display:block">Plaza Guayarte</span><div class="fh" style="margin-top:16px">Horario</div><span style="color:var(--mute);display:block">Dom a jue · 13:00 a 22:00</span><span style="color:var(--mute);display:block">Vie y sáb · 13:00 a 00:00</span></div>
+    </div>
+    <div class="demo">
+      <span>Borrador de demostración preparado por IGNIS. Las imágenes son ilustraciones referenciales; irán las fotos originales de Kldero.</span>
+      <span class="sim" id="sim">Ver cómo se ve: <button type="button" data-d="" aria-pressed="true">Hoy</button><button type="button" data-d="2" aria-pressed="false">Un martes</button><button type="button" data-d="6" aria-pressed="false">Un sábado</button></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Carrito -->
+<button id="fab" type="button" data-open-cart><span class="cnt" id="fabN" aria-live="polite">0</span><span>Ver pedido · <b id="fabT">$0.00</b></span></button>
+<div id="veil"></div>
+<aside id="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="dh"><h3 id="cartTitle">Mi pedido</h3><button class="x" type="button" id="closeCart" aria-label="Cerrar pedido">✕</button></div>
+  <div class="db" id="cartBody"></div>
+  <div class="df">
+    <div class="tot"><span>Total <small>Precios con IVA y servicio. Envío por confirmar.</small></span><span id="cartTot" aria-live="polite">$0.00</span></div>
+    <div class="dform">
+      <div class="f"><label for="cn">Nombre</label><input id="cn" type="text" autocomplete="name" placeholder="Tu nombre"></div>
+      <div class="f"><label for="ca">Dirección y referencia</label><input id="ca" type="text" autocomplete="street-address" placeholder="Calle, casa o edificio, referencia"></div>
+      <div class="f"><label for="cl">Local más cercano</label><select id="cl"></select></div>
+      <fieldset class="seg"><legend style="margin-bottom:6px">Forma de pago</legend>
+        <label><input type="radio" name="pay" value="Efectivo" checked> Efectivo</label>
+        <label><input type="radio" name="pay" value="Transferencia"> Transferencia</label>
+      </fieldset>
+      <div class="warn" id="cashWarn">La promo de panceta crujiente aplica solo en efectivo.</div>
+    </div>
+    <a class="btn fire" id="sendWA" href="#" target="_blank" rel="noopener" data-mag>Enviar pedido por WhatsApp</a>
+  </div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+var WA="593997986596";
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var fine=window.matchMedia("(pointer: fine)").matches;
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function money(n){return "$"+n.toFixed(2)}
+
+/* ---------- Datos ---------- */
+var PROMOS=[
+  {id:"p-bife",what:"Uruguayo",name:"2 Bifes de chorizo",price:19.99,cond:"Con guarniciones"},
+  {id:"p-pic",what:"Uruguaya",name:"2 Picañas",price:19.99,cond:"Con guarniciones"},
+  {id:"p-cerd",what:"Los tres",name:"2 Tres Cerditos",price:19.99,cond:"Con guarniciones"},
+  {id:"p-tres",what:"Combo",name:"2 Tres Res",price:29.99,cond:"Con guarniciones"},
+  {id:"p-panc",what:"Crujiente",name:"2 Pancetas",price:11.99,cond:"Solo efectivo",cash:true},
+  {id:"p-poll",what:"Al grill",name:"2 Pollos",price:11.99,cond:"Todos los días"}
+];
+var MENU=[
+ {k:"res",t:"Res",items:[
+  ["Tres Res",20.99,"Picaña americana, bife de chorizo uruguayo y lomo fino importado."],
+  ["Lomo fino",12.50,"A la pimienta, con champiñones o con jalapeño."],
+  ["Filet mignon",13.99,""],
+  ["Bife de chorizo uruguayo",15.99,""]]},
+ {k:"pic",t:"Picañas",items:[
+  ["Picaña uruguaya",15.99,"Premium."],
+  ["Picaña americana",18.99,"Premium."]]},
+ {k:"cer",t:"Cerdo",items:[
+  ["Tres Cerditos",13.99,"Matambre, panceta y lomo fino."],
+  ["Tomahawk",17.99,""],
+  ["Lomo fino de cerdo",12.99,""],
+  ["Panceta",9.99,"Crujiente."],
+  ["Matambre",13.99,""],
+  ["Picaña de cerdo",12.99,""],
+  ["Chuleta Kldero",8.99,""],
+  ["Costillas St. Louis",12.99,"BBQ con Jack Daniel's."],
+  ["Costillas Baby St. Louis",9.99,"BBQ con Jack Daniel's."],
+  ["Baby Back",17.99,"BBQ con Jack Daniel's."],
+  ["Costilla tradicional",9.99,""],
+  ["Costilla ahumada",11.30,""]]},
+ {k:"pol",t:"Pollo",items:[
+  ["Pollo al grill",7.99,""],
+  ["Pollo a la provenzal",7.99,""],
+  ["Pollo a la cerveza",7.99,"Con verduras asadas."]]},
+ {k:"ent",t:"Entradas",items:[
+  ["Piqueo Kldero",10.99,"Para compartir."],
+  ["Mix de embutidos",4.99,""],
+  ["Chistorra",5.50,""],
+  ["Chistorra a la pizza",6.50,""],
+  ["Morcilla",3.99,"Porción."],
+  ["Patacones con queso",3.50,""],
+  ["Maduro con queso",3.00,""]]},
+ {k:"gua",t:"Guarniciones",items:[
+  ["Papas rústicas",2.00,""],
+  ["Papas cheddar",3.00,""],
+  ["Papas cheddar bacon",3.50,""],
+  ["Ensalada César",3.00,""],
+  ["Porción de morocho",3.50,""],
+  ["Moro de lenteja",3.00,""],
+  ["Arroz con menestra",3.00,""],
+  ["Porción de menestra",2.00,""]]},
+ {k:"coc",t:"Cócteles",items:[
+  ["Margarita normal o frozen",5.99,"Tequila blanco reposado, Marie Brizard y limón."],
+  ["Moscow mule",5.99,"Vodka, limón y ginger beer."],
+  ["Mojito",5.99,"Bacardí, lima, hierbabuena y soda."],
+  ["Blueberry mojito",5.99,""],
+  ["Caipiriña",5.99,"Cachaça, lima y azúcar."],
+  ["Piña colada",5.99,"Ron blanco, leche de coco y piña."],
+  ["Tequila sunrise",5.99,"Tequila, naranja y granadina."],
+  ["Cuba libre",5.99,""],
+  ["Long Island",5.99,""],
+  ["Apple martini",5.99,""],
+  ["Paloma",5.99,""],
+  ["Milkshake de Oreo o con licor",5.99,""],
+  ["Mimosa",4.99,"Naranja y champagne."],
+  ["Copa de vino",3.99,""]]},
+ {k:"beb",t:"Bebidas",items:[
+  ["Jugos naturales",2.99,""],
+  ["Limonada",2.99,""],
+  ["Colas",1.99,""],
+  ["Fuze Tea",1.99,""],
+  ["Agua sin gas",1.75,""],
+  ["Frozen",2.99,""],
+  ["Frozen mixtos",3.50,""],
+  ["Pilsener light",2.99,""],
+  ["Club verde",2.99,""],
+  ["Stella Artois",4.50,""],
+  ["Corona",4.50,""],
+  ["Michelada nacional",4.50,""]]}
+];
+var LOCS=[
+  {id:"hig",n:"1",name:"Higueras",short:"Víctor Emilio Estrada e Higueras",area:"Urdesa",live:true,q:"Kldero Steak Club Higueras Urdesa Guayaquil"},
+  {id:"mon",n:"2",name:"Monjas",short:"V. E. Estrada, entre Monjas y Ficus",area:"Urdesa",live:false,q:"Kldero Steak Club Monjas Urdesa Guayaquil"},
+  {id:"gua",n:"3",name:"Plaza Guayarte",short:"Frente a la Católica",area:"Guayaquil",live:true,q:"Kldero Steak Club Plaza Guayarte Guayaquil"}
+];
+
+/* ---------- Hora de Guayaquil y simulación ---------- */
+var sim=null;
+function nowGye(){
+  if(sim!==null) return {d:sim,h:19,m:0};
+  var f=new Intl.DateTimeFormat("en-US",{timeZone:"America/Guayaquil",weekday:"short",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+  var o={};f.forEach(function(p){o[p.type]=p.value});
+  var map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {d:map[o.weekday],h:parseInt(o.hour,10)%24,m:parseInt(o.minute,10)};
+}
+function dayInfo(d){var wk=(d===5||d===6);return {open:13,close:wk?24:22,wk:wk}}
+function statusText(){
+  var t=nowGye(),i=dayInfo(t.d),mins=t.h*60+t.m;
+  if(mins>=i.open*60&&mins<i.close*60){return {on:true,txt:"Abierto ahora · cierra "+(i.close===24?"00:00":i.close+":00")}}
+  if(mins<i.open*60){return {on:false,txt:"Cerrado · abre hoy 13:00"}}
+  return {on:false,txt:"Cerrado · abre mañana 13:00"}
+}
+
+/* ---------- Hero ---------- */
+(function(){
+  var h=$("#h1a"),txt="Parrilla uruguaya",out="";
+  var words=txt.split(" "),i=0;
+  words.forEach(function(w,wi){
+    out+='<span style="display:inline-block;white-space:nowrap">';
+    w.split("").forEach(function(c){out+='<span class="l" style="--i:'+(i++)+'">'+c+'</span>'});
+    out+='</span>'+(wi<words.length-1?' ':'');
+  });
+  h.innerHTML=out;
+})();
+function paintStatus(){
+  var s=statusText();
+  $("#heroStatusTxt").textContent=s.txt;
+  $("#heroStatus .dot").className="dot"+(s.on?" on":"");
+  $("#martesBanner").classList.toggle("show",nowGye().d===2);
+}
+
+/* ---------- Marquee ---------- */
+(function(){
+  var items=["Bife uruguayo","Picaña uruguaya","Tres Cerditos","Panceta crujiente","Tres Res","Costillas BBQ Jack Daniel's","Show en vivo","Martes loco","Cócteles"];
+  var h="";for(var r=0;r<2;r++){items.forEach(function(t){h+="<span>"+t+"</span>"})}
+  $("#marq").innerHTML=h+h;
+})();
+
+/* ---------- Promos ---------- */
+var STEAK_MINI='<svg viewBox="0 0 440 340" aria-hidden="true"><ellipse cx="220" cy="196" rx="206" ry="130" fill="#3d2816" stroke="#1b0f08" stroke-width="2"/><ellipse cx="220" cy="184" rx="172" ry="104" fill="url(#gPlate)" stroke="url(#gGold)" stroke-width="3"/><circle cx="110" cy="232" r="24" fill="url(#gTosti)"/><circle cx="338" cy="232" r="20" fill="#c9a25a"/><path d="M92 168C84 120 160 78 246 86c88 8 118 60 98 108-20 48-124 66-188 44-46-16-60-40-64-70z" fill="url(#gMeat)" stroke="#2b0d06" stroke-width="3"/><g stroke="#140604" stroke-width="12" stroke-linecap="round" opacity=".85"><path d="M118 220L228 100M156 238L290 102M214 244L322 130"/></g></svg>';
+function renderPromos(){
+  var t=nowGye().d===2,g=$("#promoGrid"),h="";
+  PROMOS.forEach(function(p,i){
+    var whole=Math.floor(p.price),cents=Math.round((p.price-whole)*100);
+    h+='<article class="promo rv" data-tilt style="transition-delay:'+(i*60)+'ms"><div class="art">'+STEAK_MINI+'</div><span class="what">'+p.what+'</span><span class="name">'+p.name+'</span><span class="cond">'+p.cond+'</span><div class="price" data-count="'+p.price+'"><sup>$</sup>'+whole+'.'+(cents<10?"0":"")+cents+'</div><button class="btn gold small" type="button" data-addp="'+p.id+'" data-mag>Pedir esta promo</button></article>';
+  });
+  h+='<article class="promo martes-card rv'+(t?' hot':'')+'" data-tilt>'+(t?'<span class="flag">Hoy</span>':'')+'<div><span class="what">Solo martes</span><div class="name" style="font-size:44px">Martes loco · 2x1</div><p class="lead" style="margin-top:8px">Tres Cerditos, Picaña de cerdo o Lomo fino de cerdo. Pagas uno, llevas dos.</p></div><div class="price" style="margin-left:auto">2x1</div><button class="btn '+(t?'fire':'ghost')+'" type="button" data-addm="1" data-mag>'+(t?'Aprovechar hoy':'Ver cómo funciona')+'</button></article>';
+  g.innerHTML=h;
+  bindFx(g);
+}
+
+/* ---------- Menú ---------- */
+var curTab="res";
+function renderTabs(){
+  $("#tabs").innerHTML=MENU.map(function(c){var on=c.k===curTab;return '<button class="tab" role="tab" type="button" id="tab-'+c.k+'" data-k="'+c.k+'" aria-selected="'+on+'" aria-controls="menuGrid" tabindex="'+(on?0:-1)+'">'+c.t+'</button>'}).join("");
+  $("#menuGrid").setAttribute("aria-labelledby","tab-"+curTab);
+}
+function selectTab(k,focus){
+  curTab=k;renderTabs();renderMenu();
+  if(focus){var b=$("#tab-"+k);b.focus();b.scrollIntoView({block:"nearest",inline:"nearest"})}
+}
+$("#tabs").addEventListener("keydown",function(e){
+  var ks=MENU.map(function(c){return c.k}),i=ks.indexOf(curTab),n;
+  if(e.key==="ArrowRight")n=(i+1)%ks.length;
+  else if(e.key==="ArrowLeft")n=(i-1+ks.length)%ks.length;
+  else if(e.key==="Home")n=0;
+  else if(e.key==="End")n=ks.length-1;
+  else return;
+  e.preventDefault();selectTab(ks[n],true);
+});
+function renderMenu(){
+  var c=MENU.filter(function(x){return x.k===curTab})[0];
+  $("#menuGrid").innerHTML=c.items.map(function(it,i){
+    return '<div class="item" style="--i:'+i+'"><h3>'+it[0]+'</h3><span class="pr">'+money(it[1])+'</span><span class="d">'+(it[2]||"")+'</span><button class="add" type="button" aria-label="Agregar '+it[0]+'" data-add="'+c.k+'|'+i+'">+</button></div>';
+  }).join("");
+}
+
+/* ---------- Locales ---------- */
+var curLoc="hig";
+function renderLocs(){
+  $("#locList").innerHTML=LOCS.map(function(l){return '<button class="loc-btn" type="button" data-l="'+l.id+'" aria-pressed="'+(l.id===curLoc)+'"><span class="n">'+l.n+'</span><span><b>'+l.name+'</b><small>'+l.short+'</small></span><span class="pulse"></span></button>'}).join("");
+  var l=LOCS.filter(function(x){return x.id===curLoc})[0],t=nowGye(),s=statusText();
+  var live=l.live&&(t.d===5||t.d===6);
+  var rows=[["Dom a jue","13:00 a 22:00",(t.d<5||t.d===0)],["Vie y sáb","13:00 a 00:00",(t.d===5||t.d===6)]];
+  $("#locCard").innerHTML='<div class="swap" style="display:grid;gap:16px"><span class="eyebrow">Kldero #'+l.n+'</span><h3>'+l.name+'</h3><p class="addr">'+l.short+(l.area?", "+l.area:"")+'.</p><div class="badges"><span class="badge"><span class="dot'+(s.on?" on":"")+'"></span>'+s.txt+'</span>'+(l.live?'<span class="badge live">'+(live?'Show en vivo hoy':'Show en vivo vie y sáb')+'</span>':'')+'</div><div class="hours">'+rows.map(function(r){return '<span class="'+(r[2]?"today":"")+'">'+r[0]+'</span><b class="'+(r[2]?"today":"")+'">'+r[1]+'</b>'}).join("")+'</div><div class="cta"><a class="btn gold" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(l.q)+'" data-mag>Cómo llegar</a><button class="btn ghost" type="button" data-resloc="'+l.id+'">Reservar aquí</button></div></div>';
+  bindFx($("#locCard"));
+}
+
+/* ---------- Carrito ---------- */
+var cart={};
+function itemById(key){
+  if(key.indexOf("p-")===0){var p=PROMOS.filter(function(x){return x.id===key})[0];return {name:"Promo: "+p.name,price:p.price,cash:!!p.cash}}
+  if(key==="martes"){return {name:"Martes loco 2x1 (indica cuál corte)",price:0,cash:false}}
+  var a=key.split("|"),c=MENU.filter(function(x){return x.k===a[0]})[0],it=c.items[+a[1]];
+  return {name:it[0],price:it[1],cash:false};
+}
+function add(key,el){
+  cart[key]=(cart[key]||0)+1;paint();
+  if(el){el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop")}
+}
+function totals(){var n=0,t=0;Object.keys(cart).forEach(function(k){n+=cart[k];t+=cart[k]*itemById(k).price});return {n:n,t:t}}
+function paint(){
+  var tt=totals(),keys=Object.keys(cart).filter(function(k){return cart[k]>0});
+  $("#fab").classList.toggle("show",tt.n>0);
+  $("#fabN").textContent=tt.n;$("#fabT").textContent=money(tt.t);
+  $("#cartTot").textContent=money(tt.t);
+  $("#cartBody").innerHTML=keys.length?keys.map(function(k){var it=itemById(k);return '<div class="row"><b>'+it.name+'</b><span>'+(it.price?money(it.price*cart[k]):"")+'</span><div class="qty"><button type="button" data-q="'+k+'|-1" aria-label="Quitar uno">−</button><span>'+cart[k]+'</span><button type="button" data-q="'+k+'|1" aria-label="Agregar uno">+</button></div></div>'}).join(""):'<div class="empty">Tu pedido está vacío. Agrega promos o platos de la carta.</div>';
+  var cash=keys.some(function(k){return itemById(k).cash}),pay=$('input[name="pay"]:checked').value;
+  $("#cashWarn").classList.toggle("show",cash&&pay==="Transferencia");
+  var loc=LOCS.filter(function(l){return l.id===$("#cl").value})[0];
+  var lines=keys.map(function(k){var it=itemById(k);return "• "+cart[k]+" x "+it.name+(it.price?" ("+money(it.price*cart[k])+")":"")});
+  var msg="Hola Kldero 👋 Quiero hacer un pedido a domicilio:\n\n"+(lines.join("\n")||"(sin platos)")+"\n\nTotal aproximado: "+money(tt.t)+" (sin envío)\nNombre: "+($("#cn").value||"(por completar)")+"\nDirección: "+($("#ca").value||"(por completar)")+"\nLocal más cercano: "+(loc?loc.name:"")+"\nForma de pago: "+pay;
+  var a=$("#sendWA");a.href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+  a.style.opacity=tt.n?1:.5;a.style.pointerEvents=tt.n?"auto":"none";
+}
+var lastFocus=null;
+function isOpen(){return $("#drawer").classList.contains("open")}
+function openCart(){
+  if(isOpen())return;
+  lastFocus=document.activeElement;
+  $("#drawer").classList.add("open");$("#veil").classList.add("open");$("#drawer").setAttribute("aria-hidden","false");paint();$("#closeCart").focus();
+}
+function closeCart(){
+  if(!isOpen())return;
+  $("#drawer").classList.remove("open");$("#veil").classList.remove("open");$("#drawer").setAttribute("aria-hidden","true");
+  if(lastFocus&&document.contains(lastFocus)&&lastFocus.offsetParent!==null)lastFocus.focus();
+  else{var f=$("#fab");if(f.classList.contains("show"))f.focus()}
+  lastFocus=null;
+}
+
+/* ---------- Efectos: tilt, magnético, glow ---------- */
+function bindFx(root){
+  if(reduce||!fine)return;
+  $$("[data-tilt]",root).forEach(function(c){
+    c.addEventListener("pointermove",function(e){
+      var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      c.style.setProperty("--mx",x*100+"%");c.style.setProperty("--my",y*100+"%");
+      c.style.transform="perspective(900px) rotateX("+((.5-y)*6)+"deg) rotateY("+((x-.5)*8)+"deg) translateY(-4px)";
+    });
+    c.addEventListener("pointerleave",function(){c.style.transform=""});
+  });
+  $$("[data-mag]",root).forEach(function(b){
+    b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();b.style.transform="translate("+((e.clientX-r.left-r.width/2)*.18)+"px,"+((e.clientY-r.top-r.height/2)*.28)+"px)"});
+    b.addEventListener("pointerleave",function(){b.style.transform=""});
+  });
+}
+
+/* ---------- Eventos globales ---------- */
+document.addEventListener("click",function(e){
+  var t=e.target.closest("button,a");if(!t)return;
+  if(t.hasAttribute("data-open-cart")){openCart();return}
+  if(t.dataset.addp){add(t.dataset.addp,t);openCart();return}
+  if(t.dataset.addm){add("martes",t);openCart();return}
+  if(t.dataset.add){add(t.dataset.add,t);return}
+  if(t.dataset.q){var a=t.dataset.q.split("|");var k=a[0]+(a.length>2?"|"+a[1]:"");var d=+a[a.length-1];var key=a.slice(0,-1).join("|");cart[key]=Math.max(0,(cart[key]||0)+d);if(!cart[key])delete cart[key];paint();return}
+  if(t.dataset.k){selectTab(t.dataset.k,true);return}
+  if(t.dataset.l){curLoc=t.dataset.l;renderLocs();return}
+  if(t.dataset.resloc){$("#rl").value=t.dataset.resloc;location.hash="reservas";document.getElementById("reservas").scrollIntoView({behavior:reduce?"auto":"smooth"});return}
+  if(t.id==="closeCart"){closeCart();return}
+  if(t.closest("#sim")&&t.dataset.d!==undefined){
+    sim=t.dataset.d===""?null:+t.dataset.d;
+    $$("#sim button").forEach(function(b){b.setAttribute("aria-pressed",b===t)});
+    paintStatus();renderPromos();renderLocs();observeRv();return;
+  }
+});
+$("#veil").addEventListener("click",closeCart);
+document.addEventListener("keydown",function(e){
+  if(!isOpen())return;
+  if(e.key==="Escape"){closeCart();return}
+  if(e.key==="Tab"){
+    var f=$$("button,a[href],input,select,textarea",$("#drawer")).filter(function(x){return !x.disabled&&x.offsetParent!==null&&getComputedStyle(x).pointerEvents!=="none"});
+    if(!f.length)return;
+    var a=f[0],z=f[f.length-1];
+    if(!$("#drawer").contains(document.activeElement)){e.preventDefault();a.focus()}
+    else if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  }
+});
+["cn","ca","cl"].forEach(function(id){$("#"+id).addEventListener("input",paint)});
+$$('input[name="pay"]').forEach(function(r){r.addEventListener("change",paint)});
+
+/* Reservas */
+function paintRes(){
+  var l=LOCS.filter(function(x){return x.id===$("#rl").value})[0];
+  var d=$("#rd").value,ds=d?new Date(d+"T12:00:00").toLocaleDateString("es-EC",{weekday:"long",day:"numeric",month:"long"}):"(por definir)";
+  var msg="Hola Kldero 👋 Quiero reservar:\n\nLocal: "+l.name+"\nFecha: "+ds+"\nHora: "+$("#rh").value+"\nPersonas: "+$("#rp").value+"\nOcasión: "+$("#ro").value+"\nNombre: "+($("#rn").value||"(por completar)");
+  $("#resWA").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+}
+$("#rform").addEventListener("input",paintRes);
+$("#rform").addEventListener("change",paintRes);
+$("#rform").addEventListener("submit",function(e){e.preventDefault()});
+var sel=LOCS.map(function(l){return '<option value="'+l.id+'">'+l.name+'</option>'}).join("");
+$("#rl").innerHTML=sel;$("#cl").innerHTML=sel;
+(function(){var d=new Date();d.setDate(d.getDate()+1);$("#rd").min=new Date().toISOString().slice(0,10);$("#rd").value=d.toISOString().slice(0,10)})();
+
+/* ---------- Scroll: progreso, nav, sellado del corte ---------- */
+var hero=$("#hero"),ticking=false;
+function onScroll(){
+  var y=window.scrollY,max=document.documentElement.scrollHeight-innerHeight;
+  $("#progress").style.transform="scaleX("+(max>0?y/max:0)+")";
+  $("#nav").classList.toggle("solid",y>40);
+  var hh=hero.offsetHeight,p=Math.min(1,Math.max(0,y/(hh*.8)));
+  document.documentElement.style.setProperty("--p",p.toFixed(3));
+  document.documentElement.style.setProperty("--sear",Math.min(1,.18+p*1.1).toFixed(3));
+  ticking=false;
+}
+addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+
+/* ---------- Reveal + count-up ---------- */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(en){
+    if(!en.isIntersecting)return;
+    en.target.classList.add("in");io.unobserve(en.target);
+    var pr=en.target.querySelector("[data-count]");
+    if(pr&&!reduce){
+      var to=parseFloat(pr.dataset.count),t0=performance.now(),dur=900;
+      (function step(n){var k=Math.min(1,(n-t0)/dur),e=1-Math.pow(1-k,3),v=to*e,w=Math.floor(v),c=Math.round((v-w)*100);
+        pr.innerHTML="<sup>$</sup>"+w+"."+(c<10?"0":"")+c;if(k<1)requestAnimationFrame(step);else{var W=Math.floor(to),C=Math.round((to-W)*100);pr.innerHTML="<sup>$</sup>"+W+"."+(C<10?"0":"")+C}})(t0);
+    }
+  });
+},{threshold:.15});
+function observeRv(){$$(".rv").forEach(function(el){io.observe(el)})}
+
+/* ---------- Brasas ---------- */
+(function(){
+  var cv=$("#embers"),cx=cv.getContext("2d"),W,H,P=[],dpr=Math.min(2,devicePixelRatio||1);
+  if(reduce)return;
+  function size(){W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)}
+  function spawn(init){return {x:Math.random()*W,y:init?Math.random()*H:H+10,r:Math.random()*2.2+.6,vy:-(Math.random()*.7+.25),vx:(Math.random()-.5)*.3,ph:Math.random()*6.28,l:Math.random()*.6+.4}}
+  size();addEventListener("resize",size);
+  var n=Math.round(Math.min(90,W/12));for(var i=0;i<n;i++)P.push(spawn(true));
+  var run=true;new IntersectionObserver(function(e){run=e[0].isIntersecting;if(run)loop()}).observe(cv);
+  function loop(){
+    if(!run)return;
+    cx.clearRect(0,0,W,H);cx.globalCompositeOperation="lighter";
+    P.forEach(function(p,i){
+      p.ph+=.03;p.x+=p.vx+Math.sin(p.ph)*.35;p.y+=p.vy;
+      var a=Math.max(0,Math.min(1,(p.y/H)))*p.l;
+      var g=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6);
+      g.addColorStop(0,"rgba(255,200,110,"+a+")");g.addColorStop(.4,"rgba(228,87,46,"+a*.5+")");g.addColorStop(1,"rgba(228,87,46,0)");
+      cx.fillStyle=g;cx.beginPath();cx.arc(p.x,p.y,p.r*6,0,6.283);cx.fill();
+      if(p.y<-10)P[i]=spawn(false);
+    });
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* ---------- Glow que sigue al cursor ---------- */
+if(fine&&!reduce){
+  var g=$("#glow"),gx=0,gy=0,tx=0,ty=0;
+  addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;g.style.opacity=1});
+  (function f(){gx+=(tx-gx)*.12;gy+=(ty-gy)*.12;g.style.transform="translate("+gx+"px,"+gy+"px)";requestAnimationFrame(f)})();
+}
+
+/* ---------- Inicio ---------- */
+paintStatus();renderPromos();renderTabs();renderMenu();renderLocs();paint();paintRes();bindFx(document);observeRv();onScroll();
+setInterval(function(){paintStatus()},60000);
+})();
+</script>
+</body>
+</html>
